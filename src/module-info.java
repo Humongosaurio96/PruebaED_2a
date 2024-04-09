@@ -5,4 +5,5 @@
  * 
  */
 module instituto {
+    requires junit;
 }
