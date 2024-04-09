@@ -15,6 +15,9 @@ public class Persona implements Comparable<Persona> {
     private char genero;
     private LocalDate nacimiento;
 
+    /**
+     * Crea una persona auto generada con valores por defecto
+     */
     public Persona() {
         nif = new Nif();
         nombre = "";
@@ -22,11 +25,24 @@ public class Persona implements Comparable<Persona> {
         nacimiento = LocalDate.of(1990, 1, 1);
     }
 
+    /**
+     *
+     * @param nif el nif de la persona
+     */
     public Persona(int nif) {
         this();
         this.nif = new Nif(nif);
     }
 
+    /**
+     *
+     * @param nif el nif de la persona
+     * @param nombre como se llama la persona
+     * @param genero H para hombre, M para mujer
+     * @param dia dia de nacimiento
+     * @param mes mes de nacimiento
+     * @param ano año de nacimiento
+     */
     public Persona(int nif, String nombre, char genero,
             int dia, int mes, int ano) {
         this.nif = new Nif(nif);
@@ -68,6 +84,10 @@ public class Persona implements Comparable<Persona> {
         this.nacimiento = nacimiento;
     }
 
+    /**
+     * Calcula la edad de una persona comparando su fecha de nacimiento con el dia actual
+     * @return
+     */
     public int getEdad() {
         return Period.between(nacimiento, LocalDate.now()).getYears();
     }

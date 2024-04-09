@@ -23,11 +23,18 @@ public class Nif {
         return LETRAS[numero % 23];
     }
 
+    /**
+     * Nif automatico con numero y letra autogenerado
+     */
     protected Nif() {
         this.numero = 0;
         this.letra = ' ';
     }
 
+    /**
+     *
+     * @param numero el numero del dni, la letra se genera a partir del numero
+     */
     protected Nif(int numero) {
         this.numero = numero;
         this.letra = calcularLetra(numero);
@@ -43,6 +50,11 @@ public class Nif {
         this.letra = calcularLetra(numero);
     }
 
+    /**
+     * Compara dos objetos para comprobar si son iguales
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
